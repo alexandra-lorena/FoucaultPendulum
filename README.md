@@ -24,4 +24,4 @@ in the file <code>docs</code> or click this link [FoucaultPendulum.ipynb](docs/F
 
 
 ### Papers
-1. <i> Analysis on the Foucault pendulum by De Alembert Principle and Numerical Simulation </i>, Zhiwu Zheng [https://website-name.com](https://arxiv.org/pdf/1504.03873)
+1. <i> Analysis on the Foucault pendulum by De Alembert Principle and Numerical Simulation </i>, Zhiwu Zheng [https://arxiv.org/pdf/1504.03873](https://arxiv.org/pdf/1504.03873)
