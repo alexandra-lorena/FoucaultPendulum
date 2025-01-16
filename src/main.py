@@ -2,7 +2,18 @@ from vpython import *
 from src.solve_ode import *
 
 
-# User input functions
+# Initialize objects
+canvas(height = 550, width = 1550, color = color.black)
+scene.userpin = True
+is_bob_trail = True
+earth = sphere(pos = vec(0, 0, 0), radius = 42, texture = textures.earth)
+earth.rotate(axis = vec(0, 0, 1), origin = vec(0, 0, 0), angle = pi/4)
+roof = box( pos = vec(0, 67, 0), axis = vec(1, 0, 0), length = 10, height = 1, width = 5 )
+rod = cylinder (pos = vec(0, 67, 0), axis = vec(0, -1, 0), length = 24, radius = 0.1)
+bob = sphere(pos = vec( 0, 45, 0), radius = 1, color = color.red, make_trail = is_bob_trail, trail_radius = 0.1)
+
+
+# Widget functions
 def disable_trail(evt):
     global is_bob_trail
     if evt.checked:
@@ -27,23 +38,11 @@ def change_rate(evt):
     rate_value = evt.value
     rate_slider_text.text = "{:1.0f}".format(evt.value) + "\n\n"
 
-
-# Initialize objects
-is_bob_trail = True
-canvas(height = 550, width = 1550, color = color.black)
-scene.userpin = True
-earth = sphere(pos = vec(0, 0, 0), radius = 42, texture = textures.earth)
-earth.rotate(axis = vec(0, 0, 1), origin = vec(0, 0, 0), angle = pi/4)
-roof = box( pos = vec(0, 67, 0), axis = vec(1, 0, 0), length = 10, height = 1, width = 5 )
-rod = cylinder (pos = vec(0, 67, 0), axis = vec(0, -1, 0), length = 24, radius = 0.1)
-bob = sphere(pos = vec( 0, 45, 0), radius = 1, color = color.red, make_trail = is_bob_trail, trail_radius = 0.1)
-
-
-# Initialize user inputs
+# Initialize user input widgets
 commit_button = button(bind =reset_values, text ="Apply changes")
 space = wtext(text = "   ")
-
 trail_checkbox = checkbox(bind = disable_trail, text = "Trail", checked = True)
+
 new_line = wtext(text = "\n\n")
 
 alpha_slider_title = wtext(text = "Change alpha:  ")
@@ -53,7 +52,6 @@ alpha_slider_text = wtext(text = "{:1.1f}".format(alpha_slider.value) + "\n\n")
 rate_slider_title = wtext(text = "Change rate:   ")
 rate_slider = slider(bind =change_rate, min = 0, max = 1000, step = 10, value = 100)
 rate_slider_text = wtext(text = "{:1.0f}".format(rate_slider.value) + "\n\n")
-
 
 
 def main():
@@ -69,6 +67,5 @@ def main():
         bob.pos = vec(x[i], y[i], z[i])
         rod.axis = bob.pos - rod.pos
         i += 1
-
 
 main()

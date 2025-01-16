@@ -4,10 +4,10 @@ from scipy.integrate import odeint
 
 
 # Constants
-L = 30 #Length of pendulum in meters
-g = 9.81 #Gravitational acceleration, m/s^2
-omega = 7.27e-5 #Angular velocity of Earth, rad/s
-phi = np.radians(45) #φ,Latitude of pendulum
+L = 30 # Length of pendulum, m
+g = 9.81 # Gravitational acceleration, m/s^2
+omega = 7.27e-5 # Angular velocity of Earth, rad/s
+phi = np.radians(45) # Latitude of pendulum, rad
 
 # Initial conditions
 a_0 = np.radians(10)
