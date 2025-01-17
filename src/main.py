@@ -6,8 +6,8 @@ from src.solve_ode import *
 canvas(height = 550, width = 1550, color = color.black)
 scene.userpin = True
 is_bob_trail = True
-earth = sphere(pos = vec(0, 0, 0), radius = 42, texture = textures.earth)
-earth.rotate(axis = vec(0, 0, 1), origin = vec(0, 0, 0), angle = pi/4)
+earth = sphere(pos = vec(0, -23, 0), radius = 65, texture = textures.earth)
+earth.rotate(axis = vec(0, 0, 1), origin = vec(0, -23, 0), angle = pi/4)
 roof = box( pos = vec(0, 67, 0), axis = vec(1, 0, 0), length = 10, height = 1, width = 5 )
 rod = cylinder (pos = vec(0, 67, 0), axis = vec(0, -1, 0), length = 24, radius = 0.1)
 bob = sphere(pos = vec( 0, 45, 0), radius = 1, color = color.red, make_trail = is_bob_trail, trail_radius = 0.1)
